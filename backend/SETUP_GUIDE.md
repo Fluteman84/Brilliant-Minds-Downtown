@@ -40,9 +40,10 @@ This tab can remain empty for now. Admin login is currently handled from `.env`.
 
 Open:
 
-- [backend/credentials.json](/c:/ALL/VSCODE%20practice/Cpp/brilliant-minds-downtown-simple-site/backend/credentials.json:1)
+- [backend/credentials.json](</C:/ALL/VSCODE practice/Webd_projects/Brilliant-Minds-Downtown/backend/credentials.json:1>)
 
 Replace the placeholder values with the contents of the downloaded Google service account JSON file.
+Important: `backend/oauth-client-secret.json` is an OAuth web-client secret copied for reference only. The current backend uses server-to-server authentication, so `GOOGLE_CREDENTIALS_FILE` must point to a Service Account JSON file, normally `credentials.json`.
 
 ## 4. Share the spreadsheet with service account
 
@@ -56,7 +57,7 @@ This step is required or the backend will not be able to read/write data.
 
 Open:
 
-- [backend/.env](/c:/ALL/VSCODE%20practice/Cpp/brilliant-minds-downtown-simple-site/backend/.env:1)
+- [backend/.env](</C:/ALL/VSCODE practice/Webd_projects/Brilliant-Minds-Downtown/backend/.env:1>)
 
 Set:
 
@@ -145,3 +146,4 @@ http://localhost:3000
 - Do not rename the sheet tabs unless you also update the code
 - Do not remove the `ID` column from `COURSES` or `ENQUIRIES`
 - Passwords are plain text only for learning/demo purposes
+
