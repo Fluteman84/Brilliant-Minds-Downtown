@@ -1,4 +1,4 @@
-const API_BASE_URL = "http://localhost:3000/api";
+const scriptURL = "https://script.google.com/macros/s/AKfycbzYgdPRawza2Z98oZphvzVaSPVVlh5hFvmJsMo86SNp7oUZ3AmV7Ja5wrd2Edv5qP21/exec";
 
 const form = document.getElementById("enquiryForm");
 const messageBox = document.getElementById("contactMessage");
@@ -16,39 +16,29 @@ form.addEventListener("submit", async (event) => {
   messageBox.textContent = "";
 
   const formData = new FormData(form);
-  const payload = {
-    name: formData.get("name").trim(),
-    phone: formData.get("phone").trim(),
-    email: formData.get("email").trim(),
-    course: formData.get("course").trim(),
-    message: formData.get("message").trim()
-  };
+  const name = (formData.get("name") || "").trim();
+  const phone = (formData.get("phone") || "").trim();
+  const course = (formData.get("course") || "").trim();
 
-  if (!payload.name || !payload.phone || !payload.course) {
+  if (!name || !phone || !course) {
     messageBox.textContent = "Please fill in name, phone, and course.";
     return;
   }
 
   try {
-    const response = await fetch(`${API_BASE_URL}/enquiry`, {
+    await fetch(scriptURL, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(payload)
+      body: formData
     });
 
-    const result = await response.json();
-    messageBox.textContent = result.message;
+    messageBox.textContent = "Enquiry submitted successfully.";
+    form.reset();
 
-    if (response.ok) {
-      form.reset();
-      if (selectedCourse) {
-        courseInput.value = selectedCourse;
-      }
+    if (selectedCourse) {
+      courseInput.value = selectedCourse;
     }
   } catch (error) {
     console.error("Error sending enquiry:", error);
-    messageBox.textContent = "Could not submit enquiry.";
+    messageBox.textContent = "Could not submit enquiry. Please try again.";
   }
 });

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Courses | Brilliant Minds</title>
+  <title>Events | Brilliant Minds</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-page="courses">
+<body>
   <header class="site-header">
     <div class="container nav-bar">
       <a href="index.html" class="brand">
@@ -23,16 +23,27 @@
     </div>
   </header>
 
-  <main class="section">
-    <div class="container">
-      <p class="tag">Courses</p>
-      <h1>All programs offered at the center</h1>
-      <p class="intro-text">
-        Courses on this page are loaded dynamically from the backend API.
-      </p>
-      <div id="allCourseList" class="card-grid"></div>
-      <p id="coursesMessage" class="message-text"></p>
-    </div>
+  <main>
+    <section class="section">
+      <div class="container text-panel">
+        <div>
+          <p class="tag">Events</p>
+          <h1>Moments from the center</h1>
+          <p>
+            A visual collage of events, activities, performances, and learning
+            moments organized by Brilliant Minds-Downtown.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light-section">
+      <div class="container">
+        <p class="tag">Gallery</p>
+        <h2>Events collage</h2>
+        <div id="eventsCollage" class="events-collage"></div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -52,6 +63,6 @@
     </div>
   </footer>
 
-  <script src="js/courses.js"></script>
+  <script src="js/events.js"></script>
 </body>
 </html>
