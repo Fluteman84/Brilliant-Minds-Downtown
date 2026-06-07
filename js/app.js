@@ -254,9 +254,6 @@ const testimonialNext = document.getElementById("testimonialNext");
 const contactForm = document.getElementById("homeContactForm");
 const contactMessage = document.getElementById("homeContactMessage");
 const homeCourseInput = document.getElementById("homeCourseInput");
-const newsletterButton = document.querySelector(".newsletter-form button");
-const newsletterInput = document.querySelector(".newsletter-form input");
-
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightboxImage");
 const lightboxCaption = document.getElementById("lightboxCaption");
@@ -651,26 +648,6 @@ function setupContactForm() {
   });
 }
 
-function setupNewsletter() {
-  if (!newsletterButton || !newsletterInput) {
-    return;
-  }
-
-  newsletterButton.addEventListener("click", () => {
-    const value = newsletterInput.value.trim();
-    if (!value) {
-      newsletterInput.focus();
-      return;
-    }
-
-    newsletterInput.value = "";
-    newsletterButton.textContent = "Subscribed";
-    window.setTimeout(() => {
-      newsletterButton.textContent = "Subscribe";
-    }, 1600);
-  });
-}
-
 renderCourses();
 renderFaculty();
 renderMaterials();
@@ -684,4 +661,3 @@ setupCounters();
 setupTestimonials();
 setupLightbox();
 setupContactForm();
-setupNewsletter();

@@ -1276,11 +1276,6 @@ button {
   margin-bottom: 16px;
 }
 
-.newsletter-form {
-  display: grid;
-  gap: 12px;
-}
-
 .footer-bottom {
   padding: 18px 0 22px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
